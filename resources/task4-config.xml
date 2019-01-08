@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="info" class="com.myroom.task4.InfoPage" scope="prototype">
+        <property name="name" value="#{simpleConfig.name}"/>
+        <property name="age" value="#{simpleConfig.age}"/>
+        <property name="dreamCountry" value="#{simpleConfig.dreamCountry}"/>
+        <property name="address" value="#{simpleConfig.address}"/>
+    </bean>
+
+    <bean id="simpleConfig" class="com.myroom.task4.SimpleConfig" scope="prototype"></bean>
+
+</beans>

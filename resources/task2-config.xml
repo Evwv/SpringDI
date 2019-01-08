@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="beerList" class="com.myroom.task2.constructorI.BeerList" scope="prototype">
+        <constructor-arg>
+            <list>
+                <ref bean="beer1"/>
+                <ref bean="beer2"/>
+                <ref bean="beer3"/>
+            </list>
+        </constructor-arg>
+    </bean>
+
+    <bean id="beerSet" class="com.myroom.task2.constructorI.BeerSet" scope="prototype">
+        <constructor-arg>
+            <set>
+                <ref bean="beer1"/>
+                <ref bean="beer2"/>
+                <ref bean="beer3"/>
+            </set>
+        </constructor-arg>
+    </bean>
+
+    <bean id="beerMap" class="com.myroom.task2.constructorI.BeerMap" scope="prototype">
+        <constructor-arg>
+            <map>
+                <entry key="Guinness" value="150"/>
+                <entry key="Heineken" value="70"/>
+                <entry key="Budweiser" value="130"/>
+            </map>
+        </constructor-arg>
+    </bean>
+
+    <bean id="beerListS" class="com.myroom.task2.setterI.BeerList" scope="prototype">
+        <property name="list">
+            <list>
+                <ref bean="beer1"/>
+                <ref bean="beer2"/>
+                <ref bean="beer3"/>
+            </list>
+        </property>
+    </bean>
+
+    <bean id="beerSetS" class="com.myroom.task2.setterI.BeerSet" scope="prototype">
+        <property name="set">
+            <set>
+                <ref bean="beer1"/>
+                <ref bean="beer2"/>
+                <ref bean="beer3"/>
+            </set>
+        </property>
+    </bean>
+    <bean>
+    </bean>
+
+    <bean id="beerMapS" class="com.myroom.task2.setterI.BeerMap" scope="prototype">
+        <property name="map">
+            <map>
+                <entry key="Guinness" value="150"/>
+                <entry key="Heineken" value="70"/>
+                <entry key="Budweiser" value="130"/>
+            </map>
+        </property>
+    </bean>
+
+
+
+
+
+
+
+
+
+    <bean id="beer1" class="com.myroom.task2.constructorI.Beer" scope="prototype">
+        <constructor-arg value="Guinness"/>
+        <constructor-arg value="150"/>
+        <constructor-arg value="5.6"/>
+    </bean>
+    <bean id="beer2" class="com.myroom.task2.constructorI.Beer" scope="prototype">
+        <constructor-arg value="Heineken"/>
+        <constructor-arg value="70"/>
+        <constructor-arg value="4.7"/>
+    </bean>
+    <bean id="beer3" class="com.myroom.task2.constructorI.Beer" scope="prototype">
+        <constructor-arg value="Budweiser"/>
+        <constructor-arg value="130"/>
+        <constructor-arg value="4.5"/>
+    </bean>
+
+
+</beans>

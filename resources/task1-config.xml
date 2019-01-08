@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="macbookC" class="com.myroom.task1.laptop2" scope="prototype">
+        <constructor-arg ref="nvidia"/>
+        <constructor-arg value="1000"/>
+    </bean>
+
+    <bean id="acerC" class="com.myroom.task1.laptop2" scope="prototype">
+        <constructor-arg ref="asus"/>
+        <constructor-arg value="1500"/>
+    </bean>
+
+    <bean id="macbook" class="com.myroom.task1.laptop" scope="prototype">
+        <property name="vidioCard" ref="nvidia"/>
+        <property name="price" value="1000"/>
+    </bean>
+
+    <bean id="acer" class="com.myroom.task1.laptop" scope="prototype">
+        <property name="vidioCard" ref="asus"/>
+        <property name="price" value="1500"/>
+    </bean>
+
+
+
+
+
+    <bean id="nvidia" class="com.myroom.task1.nvidiaVidioCard" scope="prototype"/>
+    <bean id="asus" class="com.myroom.task1.asusVidioCard" scope="prototype"/>
+
+</beans>
